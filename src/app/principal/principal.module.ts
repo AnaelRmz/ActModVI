@@ -4,6 +4,7 @@ import { PublicaComponent } from './pages/publica/publica.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { PrincipalRoutingModule } from './principal-routing.module';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -11,7 +12,8 @@ import { PrincipalRoutingModule } from './principal-routing.module';
   declarations: [
     PublicaComponent,
     AdminComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

@@ -1,13 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-usuario',
-  templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class UsuarioComponent implements OnInit {
+export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) {
+    
+    const token = localStorage.getItem('ACCESS_TOKEN');
+    const rol = localStorage.getItem('ROL');
+    //consultar con la api si el token es válido
+    if(!token || rol!="user"){
+      this.router.navigateByUrl('/auth/login');
+    }
+   }
 
   ngOnInit(): void {
   }
